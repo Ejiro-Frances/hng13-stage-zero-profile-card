@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/d6b22e1d66.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <p class="current-time" data-testid="test-user-time" id="time">
+        Loading...
+      </p>
+
+      <article data-testid="test-profile-card" class="profile__container">
+        <!-- profile image -->
+        <figure class="profile-avatar__container">
+          <img
+            src="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+            data-testid="test-user-avatar"
+            class="profile-user__avatar"
+          />
+        </figure>
+
+        <!-- profile details -->
+        <section class="profile-user__details">
+          <h2 data-testid="test-user-name">Ejiro Frances</h2>
+
+          <h4 data-testid="test-user-job">Frontend Developer</h4>
+
+          <!-- bio -->
+          <p data-testid="test-user-bio" class="profile-user__bio">
+            I am a frontend developer with over 3 years of experience building
+            scalable web applications with modern frontend frameworks.
+          </p>
+
+          <!-- user social links -->
+          <ul
+            data-testid="test-user-social-links"
+            class="profile-user__socials"
+          >
+            <li class="profile-user__social">
+              <a
+                href="https://www.x.com/france_ssa"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li class="profile-user__social">
+              <a
+                href="https://www.linkedin.com/in/ejiro-francess-ejoh"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li class="profile-user__social">
+              <a
+                class="social-link"
+                href="https://www.github.com/Ejiro-Frances"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- container for hobbies and dislikes -->
+          <section class="user-hobbies-dislikes-container">
+            <!-- Hobbies -->
+            <div data-testid="test-user-hobbies" class="profile-user__others">
+              <h5
+                data-testid="test-user-hobbies-title"
+                class="profile-user__others-title"
+              >
+                My Hobbies
+              </h5>
+              <ul class="profile-user__others-list">
+                <li data-testid="test-user-hobby-reading">
+                  Reading mystery novels
+                </li>
+                <li data-testid="test-user-hobby-hiking">
+                  Hiking and outdoor adventures
+                </li>
+                <li data-testid="test-user-hobby-cooking">
+                  Cooking new recipes
+                </li>
+                <li data-testid="test-user-hobby-coding">Coding</li>
+              </ul>
+            </div>
+
+            <!-- dislikes -->
+            <div data-testid="test-user-dislikes" class="profile-user__others">
+              <h5 class="profile-user__others-title">My Dislikes</h5>
+              <ul class="profile-user__others-list">
+                <li>Loud, crowded places</li>
+                <li>Dishonesty</li>
+                <li>Procrastination</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </article>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
