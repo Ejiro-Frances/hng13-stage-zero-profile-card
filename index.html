@@ -12,10 +12,6 @@
   </head>
   <body>
     <main>
-      <p class="current-time" data-testid="test-user-time" id="time">
-        Loading...
-      </p>
-
       <article data-testid="test-profile-card" class="profile__container">
         <!-- profile image -->
         <figure class="profile-avatar__container">
@@ -28,14 +24,37 @@
 
         <!-- profile details -->
         <section class="profile-user__details">
-          <h2 data-testid="test-user-name">Ejiro Frances</h2>
+          <!-- show name and time -->
+          <div class="profile-user__title-container">
+            <h2 data-testid="test-user-name">Ejiro Frances</h2>
+            <p
+              class="current-time box-shadow"
+              data-testid="test-user-time"
+              id="time"
+            >
+              Loading...
+            </p>
+          </div>
 
           <h4 data-testid="test-user-job">Frontend Developer</h4>
 
           <!-- bio -->
           <p data-testid="test-user-bio" class="profile-user__bio">
-            I am a frontend developer with over 3 years of experience building
-            scalable web applications with modern frontend frameworks.
+            <span id="short-text">
+              Frontend web development is more than beautiful UIs and stunning
+              animations. It’s the art of turning imagination into interaction,
+              where logic dances with creativity and ideas take shape through
+              code. For
+            </span>
+            <span id="text-loading">...</span>
+            <span id="more-text" class="more-text">
+              me, it’s not just about building interfaces; it’s about crafting
+              experiences that make people feel something. Every click,
+              transition, and layout is a story, one line of code at a time.
+            </span>
+            <button class="button-more" onclick="toggleText()" id="toggle-btn">
+              Read More
+            </button>
           </p>
 
           <!-- user social links -->
@@ -44,38 +63,48 @@
             class="profile-user__socials"
           >
             <li class="profile-user__social">
-              <a
-                href="https://www.x.com/france_ssa"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="test-user-social-twitter"
-              >
-                <i class="fa-brands fa-x-twitter"></i>
-                <span>Twitter</span>
-              </a>
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  href="https://www.x.com/france_ssa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-twitter"
+                  class=""
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+              </div>
             </li>
             <li class="profile-user__social">
-              <a
-                href="https://www.linkedin.com/in/ejiro-francess-ejoh"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="test-user-social-linkedin"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-              </a>
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  href="https://www.linkedin.com/in/ejiro-francess-ejoh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-linkedin"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </li>
             <li class="profile-user__social">
-              <a
-                class="social-link"
-                href="https://www.github.com/Ejiro-Frances"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="test-user-social-github"
-              >
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub</span>
-              </a>
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  class="social-link"
+                  href="https://www.github.com/Ejiro-Frances"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-github"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
             </li>
           </ul>
 
@@ -90,16 +119,11 @@
                 My Hobbies
               </h5>
               <ul class="profile-user__others-list">
-                <li data-testid="test-user-hobby-reading">
-                  Reading mystery novels
-                </li>
-                <li data-testid="test-user-hobby-hiking">
-                  Hiking and outdoor adventures
-                </li>
-                <li data-testid="test-user-hobby-cooking">
-                  Cooking new recipes
-                </li>
+                <li data-testid="test-user-hobby-reading">Reading</li>
+
                 <li data-testid="test-user-hobby-coding">Coding</li>
+                <li>Outdoor events</li>
+                <li>Writing</li>
               </ul>
             </div>
 
@@ -109,7 +133,6 @@
               <ul class="profile-user__others-list">
                 <li>Loud, crowded places</li>
                 <li>Dishonesty</li>
-                <li>Procrastination</li>
               </ul>
             </div>
           </section>

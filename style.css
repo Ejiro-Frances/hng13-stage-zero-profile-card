@@ -25,15 +25,20 @@ a {
   color: inherit;
 }
 
-.current-time {
-  padding: 1rem;
-  font-weight: 500;
+/* -------REUSEABLES------- */
+.box-shadow {
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  box-shadow: inset 0 10px 20px 20px rgba(255, 255, 255, 0.2);
 }
 
+/* ------profile container ----- */
 .profile__container {
   display: flex;
   flex-direction: column;
-  padding-top: 0.2rem;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 1rem;
   max-width: 30rem;
   margin: 0 auto;
 }
@@ -45,9 +50,9 @@ a {
   height: 9.375rem;
   margin: 0 auto;
   border-radius: 100%;
-  border: 3px solid black;
+  border: 3px solid #18a1a8;
   overflow: hidden;
-  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .profile-user__avatar {
@@ -60,16 +65,57 @@ a {
 .profile-user__details {
   background-color: #18a1a8;
   color: #e6f7f7;
-  min-height: 70vh;
+  min-height: 30rem;
   margin-top: -70px;
-  padding: 6rem 2rem 1rem;
-  border-radius: 4px;
+  padding: 6rem 1rem 1rem;
+  border-radius: 4px 4px 0 0;
+}
+
+/* title container */
+.profile-user__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* time */
+.current-time {
+  font-weight: 500;
 }
 
 /* the user's bio */
 .profile-user__bio {
-  font-size: 0.875rem;
   padding: 1rem 0;
+
+  /* max-height: 7.5rem; enough for short text */
+  max-width: 1500px;
+  /* overflow: hidden; */
+  transition: max-height 0.6s ease;
+}
+
+.profile-user__bio.expanded {
+  max-height: 30rem; /* enough to fit full text */
+}
+
+.more-text {
+  display: none;
+}
+
+.button-more {
+  border-bottom: 1px solid white;
+  border-radius: 2rem;
+  font-size: 0.625rem;
+  padding: 0.2rem;
+  background: transparent;
+  font-style: italic;
+  color: #e6f7f7;
+  font-weight: 700;
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+.button-more:hover {
+  box-shadow: inset 0 10px 20px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* social links */
@@ -85,8 +131,111 @@ a {
   margin: 0.5rem 0;
 }
 
-.profile-user__social:hover {
-  text-decoration: underline;
+/* animated glow */
+.animated-border-box:before,
+.animated-border-box-glow:before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  /*border color, change middle color*/
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #18a1a8,
+    rgba(0, 0, 0, 0) 25%
+  );
+  /* change speed here */
+  animation: rotate 1.5s linear infinite;
+}
+
+.animated-border-box:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  /* border width */
+  left: 5px;
+  top: 5px;
+
+  /* double the px from the border width left */
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+
+  background: #292a2e;
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+/* Default social link style */
+.profile-user__social .animated-border-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: #292a2e;
+  color: #e6f7f7;
+  transition: transform 0.2s ease;
+}
+
+/* Lift up slightly on hover */
+.profile-user__social .animated-border-box:hover {
+  transform: translateY(-2px);
+}
+
+/* Link text + icon styling */
+.profile-user__social .animated-border-box a {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+/* Glow layer */
+.profile-user__social .animated-border-box-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(15px);
+  pointer-events: none;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+/* Turn on border animation on hover */
+.profile-user__social .animated-border-box::before,
+.profile-user__social .animated-border-box-glow::before {
+  animation-play-state: paused;
+  opacity: 0;
+}
+
+/* When hovering, make border + glow visible and spin */
+.profile-user__social .animated-border-box:hover::before,
+.profile-user__social
+  .animated-border-box:hover
+  .animated-border-box-glow::before {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.profile-user__social .animated-border-box:hover .animated-border-box-glow {
+  opacity: 1;
 }
 
 /* hobbies and dislikes */
@@ -104,40 +253,57 @@ a {
   list-style-position: inside;
 }
 
-/* for screens with width 1024px and above */
-@media (min-width: 64rem) {
+/* for screens with width 768px and above */
+@media (min-width: 48rem) {
   /* make the container have a flex row */
   .profile__container {
-    flex-direction: row;
+    background-color: #18a1a8;
+    min-height: 100vh;
+
+    justify-content: start;
     align-items: center;
-    padding: 0;
+
+    padding-top: unset;
     max-width: 60rem;
-    margin: 5rem auto;
+    margin: 0 auto;
     border-radius: 5px;
     box-shadow: 4px 4px 1px 1px rgba(24, 161, 168, 0.5);
     overflow: hidden;
   }
 
   .profile-avatar__container {
-    width: 17rem;
-    height: 23.5rem;
-    border-radius: 0;
-    border: 0;
+    width: 100%;
+    height: 26rem;
+    border-radius: unset;
+    border: unset;
     box-shadow: unset;
+  }
+
+  .profile-user__avatar {
+    object-position: 0 15%;
   }
 
   /* remove the margin-top and padding for the details */
   .profile-user__details {
     margin-top: 0;
-    padding: 1rem 3rem;
-    min-height: 40vh;
-    border-radius: 0;
+    padding: 3rem 3rem 0.5rem;
+
+    border-radius: unset;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-user__socials {
+    margin: 2rem 0;
   }
 
   /* hobbies and dislikes */
   .user-hobbies-dislikes-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
 
   .profile-user__others {
@@ -145,5 +311,60 @@ a {
   }
   .profile-user__others-title {
     padding-bottom: 1.5rem;
+  }
+}
+
+/* for screens with width 1024px and above */
+@media (min-width: 64rem) {
+  body {
+    background-color: #f5f5f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .profile__container {
+    background-color: #18a1a8;
+    min-height: unset;
+    flex-direction: row;
+  }
+
+  .profile-avatar__container {
+    height: 32rem;
+  }
+
+  .profile-user__details {
+    max-height: 32rem;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #18a1a8 transparent;
+  }
+
+  .profile-user__socials {
+    margin: 0.5rem 0;
+  }
+
+  /* For WebKit browsers (Chrome, Edge, Safari) */
+  .profile-user__details::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .profile-user__details::-webkit-scrollbar-thumb {
+    background-color: #18a1a8;
+    border-radius: 1rem;
+  }
+
+  .profile-user__details::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Hide scrollbar if content fits (WebKit only) */
+  .profile-user__details:has(:not(:only-child))::-webkit-scrollbar {
+    display: block;
   }
 }

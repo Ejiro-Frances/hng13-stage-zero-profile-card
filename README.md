@@ -9,8 +9,7 @@ This project is a **Profile Card** built using **HTML, CSS, and JavaScript**. It
 - **Profile Picture** (Responsive and maintains aspect ratio)
 - **Full Name**
 - **Job Title**
-- **Short Bio** (50-100 words)
-- **Current Location**
+- **Short Bio**
 - **Social Links** (LinkedIn, GitHub, Twitter)
 - **Hobbies**
 - **Dislikes**
