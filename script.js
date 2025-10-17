@@ -7,23 +7,31 @@ const shortText = document.getElementById("short-text");
 
 //  To update the time
 function updateTime() {
-  const now = new Date();
-  timeEl.textContent = new Date().toLocaleTimeString();
+  // Get the current timestamp in milliseconds
+  const now = Date.now();
+
+  // display it
+  timeEl.textContent = now;
 }
-setInterval(updateTime, 1000);
+
+// Run once when the page loads (accurate at render)
 updateTime();
 
-// show or hide texts
+// update it every 100 millisecond
+setInterval(updateTime, 100);
+
+// show or hide more text
 function toggleText() {
-  if (moreTextEl.style.display === "none" || moreTextEl.style.display === "") {
-    moreTextEl.style.display = "inline";
-    textLoadingEl.style.display = "none";
+  const isHidden =
+    moreTextEl.style.display === "none" || moreTextEl.style.display === "";
 
-    btnTextEl.innerText = "Show Less";
-  } else {
-    moreTextEl.style.display = "none";
-    textLoadingEl.style.display = "inline";
+  moreTextEl.style.display = isHidden ? "inline" : "none";
+  textLoadingEl.style.display = isHidden ? "none" : "inline";
+  btnTextEl.innerText = isHidden ? "Show Less" : "Read More";
 
-    btnTextEl.innerText = "Read More";
-  }
+  // Accessibility: update aria-expanded
+  btnTextEl.setAttribute(
+    "aria-label",
+    isHidden ? "Show less of biography text" : "Read more of biography text"
+  );
 }

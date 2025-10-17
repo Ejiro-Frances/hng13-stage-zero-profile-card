@@ -1,9 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Ejiro Frances | Frontend Web Developer | Profile Card</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Card</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="A personal profile card for Ejiro Frances, a frontend developer passionate about crafting interactive and accessible web experiences."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+      type="image/jpeg"
+    />
+
+    <!-- Open Graph (for social sharing preview) -->
+    <meta property="og:title" content="Ejiro Frances — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend web developer passionate about crafting interactive and accessible digital experiences."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://frances-portfolio-one.vercel.app/"
+    />
+
+    <!-- Twitter Card (for X / Twitter previews) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ejiro Frances — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend web developer crafting elegant and interactive experiences."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+    />
+
+    <!-- Author & theme color -->
+    <meta name="author" content="Ejiro Frances Ejoh" />
+    <meta name="theme-color" content="#18a1a8" />
+
     <link rel="stylesheet" href="./style.css" />
     <script
       src="https://kit.fontawesome.com/d6b22e1d66.js"
@@ -17,15 +62,19 @@
         <figure class="profile-avatar__container">
           <img
             src="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+            alt="Portrait of Ejiro Frances"
             data-testid="test-user-avatar"
             class="profile-user__avatar"
           />
+          <figcaption class="sr-only">
+            Ejiro Frances — Frontend Developer
+          </figcaption>
         </figure>
 
         <!-- profile details -->
         <section class="profile-user__details">
           <!-- show name and time -->
-          <div class="profile-user__title-container">
+          <header class="profile-user__title-container">
             <h2 data-testid="test-user-name">Ejiro Frances</h2>
             <p
               class="current-time box-shadow"
@@ -34,12 +83,16 @@
             >
               Loading...
             </p>
-          </div>
+          </header>
 
-          <h4 data-testid="test-user-job">Frontend Developer</h4>
+          <h4 data-testid="test-user-role">Frontend Developer</h4>
 
           <!-- bio -->
-          <p data-testid="test-user-bio" class="profile-user__bio">
+          <p
+            data-testid="test-user-bio"
+            class="profile-user__bio"
+            aria-live="polite"
+          >
             <span id="short-text">
               Frontend web development is more than beautiful UIs and stunning
               animations. It’s the art of turning imagination into interaction,
@@ -52,90 +105,113 @@
               experiences that make people feel something. Every click,
               transition, and layout is a story, one line of code at a time.
             </span>
-            <button class="button-more" onclick="toggleText()" id="toggle-btn">
+            <button
+              data-testid="test-toggle-text"
+              class="button-more"
+              onclick="toggleText()"
+              id="toggle-btn"
+              aria-expanded="false"
+              aria-controls="more-text"
+            >
               Read More
             </button>
           </p>
 
           <!-- user social links -->
-          <ul
-            data-testid="test-user-social-links"
-            class="profile-user__socials"
-          >
-            <li class="profile-user__social">
-              <div class="animated-border-box">
-                <div class="animated-border-box-glow"></div>
-                <a
-                  href="https://www.x.com/france_ssa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-twitter"
-                  class=""
-                >
-                  <i class="fa-brands fa-x-twitter"></i>
-                  <span>Twitter</span>
-                </a>
-              </div>
-            </li>
-            <li class="profile-user__social">
-              <div class="animated-border-box">
-                <div class="animated-border-box-glow"></div>
-                <a
-                  href="https://www.linkedin.com/in/ejiro-francess-ejoh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-linkedin"
-                >
-                  <i class="fa-brands fa-linkedin-in"></i>
-                  <span>LinkedIn</span>
-                </a>
-              </div>
-            </li>
-            <li class="profile-user__social">
-              <div class="animated-border-box">
-                <div class="animated-border-box-glow"></div>
-                <a
-                  class="social-link"
-                  href="https://www.github.com/Ejiro-Frances"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="test-user-social-github"
-                >
-                  <i class="fa-brands fa-github"></i>
-                  <span>GitHub</span>
-                </a>
-              </div>
-            </li>
-          </ul>
+          <nav>
+            <ul
+              data-testid="test-user-social-links"
+              class="profile-user__socials"
+            >
+              <li class="profile-user__social">
+                <div class="animated-border-box">
+                  <div class="animated-border-box-glow"></div>
+                  <a
+                    href="https://www.x.com/france_ssa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-twitter"
+                    aria-label="Visit Ejiro Frances on X (formally Twitter)"
+                  >
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>Twitter</span>
+                  </a>
+                </div>
+              </li>
+              <li class="profile-user__social">
+                <div class="animated-border-box">
+                  <div class="animated-border-box-glow"></div>
+                  <a
+                    href="https://www.linkedin.com/in/ejiro-francess-ejoh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-linkedin"
+                    aria-label="Find Ejiro Frances on LinkedIn"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </li>
+              <li class="profile-user__social">
+                <div class="animated-border-box">
+                  <div class="animated-border-box-glow"></div>
+                  <a
+                    class="social-link"
+                    href="https://www.github.com/Ejiro-Frances"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-github"
+                    aria-label="Find Ejiro Frances' github"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
 
           <!-- container for hobbies and dislikes -->
-          <section class="user-hobbies-dislikes-container">
+          <div class="user-hobbies-dislikes-container">
             <!-- Hobbies -->
-            <div data-testid="test-user-hobbies" class="profile-user__others">
+            <section class="profile-user__others">
               <h5
                 data-testid="test-user-hobbies-title"
                 class="profile-user__others-title"
               >
                 My Hobbies
               </h5>
-              <ul class="profile-user__others-list">
-                <li data-testid="test-user-hobby-reading">Reading</li>
-
-                <li data-testid="test-user-hobby-coding">Coding</li>
-                <li>Outdoor events</li>
-                <li>Writing</li>
+              <ul
+                data-testid="test-user-hobbies"
+                class="profile-user__others-list"
+              >
+                <li data-testid="test-user-hobbies-reading">Reading</li>
+                <li data-testid="test-user-hobbies-writing">Writing</li>
+                <li data-testid="test-user-hobbies-coding">Coding</li>
+                <li data-testid="test-user-hobbies-outdoor">Outdoor events</li>
               </ul>
-            </div>
+            </section>
 
             <!-- dislikes -->
-            <div data-testid="test-user-dislikes" class="profile-user__others">
-              <h5 class="profile-user__others-title">My Dislikes</h5>
-              <ul class="profile-user__others-list">
-                <li>Loud, crowded places</li>
-                <li>Dishonesty</li>
+            <section class="profile-user__others">
+              <h5
+                data-testid="test-user-dislike-title"
+                class="profile-user__others-title"
+              >
+                My Dislikes
+              </h5>
+              <ul
+                data-testid="test-user-dislikes"
+                class="profile-user__others-list"
+              >
+                <li data-testid="test-user-dislike-loud">
+                  Loud, crowded places
+                </li>
+                <li data-testid="test-user-dislike-dishonesty">Dishonesty</li>
               </ul>
-            </div>
-          </section>
+            </section>
+          </div>
         </section>
       </article>
     </main>
