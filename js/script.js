@@ -11,14 +11,14 @@ function updateTime() {
   const now = Date.now();
 
   // display it
-  timeEl.textContent = now;
+  timeEl.textContent = `Time: ${now} ms`;
 }
 
 // Run once when the page loads (accurate at render)
 updateTime();
 
 // update it every 100 millisecond
-setInterval(updateTime, 100);
+setInterval(updateTime, 1000);
 
 // show or hide more text
 function toggleText() {

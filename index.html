@@ -49,14 +49,48 @@
     <meta name="author" content="Ejiro Frances Ejoh" />
     <meta name="theme-color" content="#18a1a8" />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <script
       src="https://kit.fontawesome.com/d6b22e1d66.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <main>
+    <!-- navigation -->
+    <nav data-testid="test-navigation">
+      <ul class="nav-links">
+        <li>
+          <a
+            data-testid="test-navigation-home"
+            class="nav-link active"
+            href="index.html"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="test-navigation-about"
+            class="nav-link"
+            href="about.html"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="test-navigation-contact"
+            class="nav-link"
+            href="contact.html"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- main profile page -->
+    <main data-testid="test-profile-page">
       <article data-testid="test-profile-card" class="profile__container">
         <!-- profile image -->
         <figure class="profile-avatar__container">
@@ -205,16 +239,15 @@
                 data-testid="test-user-dislikes"
                 class="profile-user__others-list"
               >
-                <li data-testid="test-user-dislike-loud">
-                  Loud, crowded places
-                </li>
+                <li data-testid="test-user-dislike-loud">Loud places</li>
                 <li data-testid="test-user-dislike-dishonesty">Dishonesty</li>
+                <li data-testid="test-user-dislike-dishonesty">Stress</li>
               </ul>
             </section>
           </div>
         </section>
       </article>
     </main>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

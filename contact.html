@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Ejiro Frances | Frontend Web Developer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Contact Ejiro Frances, a frontend developer passionate about crafting interactive and accessible web experiences."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+      type="image/jpeg"
+    />
+
+    <!-- Open Graph (for social sharing preview) -->
+    <meta property="og:title" content="Ejiro Frances — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend web developer passionate about crafting interactive and accessible digital experiences."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://frances-portfolio-one.vercel.app/"
+    />
+
+    <!-- Twitter Card (for X / Twitter previews) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ejiro Frances — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend web developer crafting elegant and interactive experiences."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
+    />
+
+    <!-- Author & theme color -->
+    <meta name="author" content="Ejiro Frances Ejoh" />
+    <meta name="theme-color" content="#18a1a8" />
+
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <script
+      src="https://kit.fontawesome.com/d6b22e1d66.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- navigation -->
+    <nav data-testid="test-navigation">
+      <ul class="nav-links">
+        <li>
+          <a
+            data-testid="test-navigation-home"
+            class="nav-link"
+            href="index.html"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="test-navigation-about"
+            class="nav-link"
+            href="about.html"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="test-navigation-contact"
+            class="nav-link active"
+            href="contact.html"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- main contact page -->
+    <main data-testid="test-contact-page" class="">
+      <section class="hero-section contact-hero">
+        <h2 class="contact-heading">
+          Let's create magic,
+          <span class="contact-me">Contact Me</span>
+        </h2>
+
+        <!-- user social links -->
+        <nav>
+          <ul
+            data-testid="test-user-social-links"
+            class="profile-user__socials"
+          >
+            <li class="profile-user__social">
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  href="https://www.x.com/france_ssa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-twitter"
+                  aria-label="Visit Ejiro Frances on X (formally Twitter)"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+              </div>
+            </li>
+            <li class="profile-user__social">
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  href="https://www.linkedin.com/in/ejiro-francess-ejoh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-linkedin"
+                  aria-label="Find Ejiro Frances on LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </li>
+            <li class="profile-user__social">
+              <div class="animated-border-box">
+                <div class="animated-border-box-glow"></div>
+                <a
+                  class="social-link"
+                  href="https://www.github.com/Ejiro-Frances"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="test-user-social-github"
+                  aria-label="Find Ejiro Frances' github"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- the contact form -->
+      <section
+        data-testid="test-contact-form-component"
+        class="contact-form-section margin-top-mg main-section"
+      >
+        <h4 data-testid="test-contact-heading">
+          Fill the form below and I'll get back to you
+        </h4>
+
+        <form
+          aria-label="Contact Form"
+          role="form"
+          novalidate
+          data-testid="test-contact-form"
+          class="contact-form"
+          id="contact-form"
+        >
+          <fieldset>
+            <!-- name -->
+            <div>
+              <label
+                data-testid="test-contact-name-label"
+                for="contactName"
+                class="label"
+              >
+                Full Name
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                required
+                data-testid="test-contact-name"
+                id="contactName"
+                type="text"
+                placeholder="Full Name"
+                class="input"
+                aria-describedby="contactName-error"
+                aria-required="true"
+              />
+
+              <span
+                id="contactName-error"
+                data-testid="test-contact-name-error"
+                class="error hidden"
+              >
+                Full name is required
+              </span>
+            </div>
+
+            <!-- email -->
+            <div>
+              <label
+                data-testid="test-contact-email-label"
+                for="contactEmail"
+                class="label"
+              >
+                Email Address
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                required
+                data-testid="test-contact-email"
+                id="contactEmail"
+                type="email"
+                placeholder="Email Address"
+                class="input"
+                aria-describedby="contactEmail-error"
+                aria-required="true"
+              />
+              <span
+                id="contactEmail-error"
+                data-testid="test-contact-email-error"
+                class="error hidden"
+              >
+                Email is required
+              </span>
+            </div>
+          </fieldset>
+          <!-- subject -->
+          <div>
+            <label
+              data-testid="test-contact-subject-label"
+              for="contactSubject"
+              class="label"
+            >
+              Subject
+            </label>
+            <textarea
+              data-testid="test-contact-subject"
+              id="contactSubject"
+              placeholder="Subject"
+              class="textarea"
+              aria-required="false"
+            ></textarea>
+          </div>
+
+          <!-- message -->
+          <div>
+            <label
+              data-testid="test-contact-message-label"
+              for="contactMessage"
+              class="label"
+            >
+              Message
+              <span class="asterisk">*</span>
+            </label>
+            <textarea
+              required
+              data-testid="test-contact-message"
+              id="contactMessage"
+              placeholder="Enter your message"
+              class="textarea"
+              aria-describedby="contactMessage-error"
+            ></textarea>
+            <span
+              id="contactMessage-error"
+              data-testid="test-contact-message-error"
+              class="error hidden"
+            >
+              A minimum of 10 characters is required
+            </span>
+          </div>
+
+          <button
+            data-testid="test-contact-button"
+            type="submit"
+            class="form-button"
+          >
+            Send
+          </button>
+        </form>
+      </section>
+
+      <!-- Success Modal -->
+      <div
+        id="successModal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="modal-content">
+          <h3>🎉 Message Sent Successfully!</h3>
+          <p>Thank you for reaching out. I’ll get back to you shortly.</p>
+          <button id="closeModalBtn" class="close-btn">Close</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <p>&copy; All Rights Reserved</p>
+    </footer>
+
+    <!-- <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+      })();
+    </script> -->
+
+    <script src="./js/contact.js"></script>
+  </body>
+</html>

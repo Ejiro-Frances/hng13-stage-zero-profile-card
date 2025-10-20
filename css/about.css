@@ -1,0 +1,12 @@
+body {
+  color: black;
+}
+
+.about-heading {
+  font-size: 3rem;
+  color: var(--color-primary-900);
+}
+
+.about-goals-heading {
+  font-size: 2rem;
+}
