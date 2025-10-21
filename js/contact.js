@@ -22,7 +22,9 @@ formEl.addEventListener("submit", (e) => {
   let isValid = true;
 
   // Validate full name
-  if (!fullName) {
+  const nameParts = fullName.split(" ").filter(Boolean);
+  if (nameParts.length < 2 || nameParts.some((part) => part.length < 2)) {
+    fullNameErrorEl.textContent = "Please enter your first and last name";
     fullNameErrorEl.classList.remove("hidden");
     fullNameEl.setAttribute("aria-invalid", "true");
     isValid = false;

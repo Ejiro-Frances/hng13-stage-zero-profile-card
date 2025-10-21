@@ -2,11 +2,55 @@ body {
   color: black;
 }
 
+.about-hero-section {
+  height: 80vh;
+  max-width: 90%;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
 .about-heading {
   font-size: 3rem;
   color: var(--color-primary-900);
 }
 
+.bio-p {
+  padding-top: 1rem;
+}
+
 .about-goals-heading {
   font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.about-page-list {
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1.2rem 0.6rem 1.2rem 1.5rem;
+}
+
+.about-confidence-heading {
+  font-size: 1.8rem;
+}
+
+.note-future-self {
+  background: var(--color-primary-100);
+  padding: 2rem 1rem;
+}
+
+.note-future-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .note-future-self {
+    padding: 4rem 10rem;
+    text-align: center;
+  }
 }
