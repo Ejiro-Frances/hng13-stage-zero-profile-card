@@ -65,9 +65,9 @@ fieldset {
 .input:focus,
 .textarea:focus,
 .form-button:focus {
-  outline: 1px solid var(--color-primary-900);
+  outline: 1px solid var(--color-primary-100);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-primary-500);
+  box-shadow: 0 0 0 4px var(--color-primary-100);
 }
 
 .form-button {
@@ -158,9 +158,11 @@ fieldset {
     flex-direction: row;
     gap: 2rem;
   }
+
   fieldset div {
     width: 100%;
   }
+
   .contact-form-section button:hover {
     transform: unset;
     background: var(--color-primary-500);
