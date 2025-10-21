@@ -1,10 +1,10 @@
-# HNG STAGE ZERO TASK - Profile Card
+# HNG STAGE ONE TASK - Profile Card with About and Contact Pages
 
 ## Overview
 
-This project is a **Profile Card** built using **HTML, CSS, and JavaScript**. It displays essential user information, including a profile avatar, name, job role, bio, social links, hobbies, dislikes and dynamically updating time.
+This project is a **Profile Card** built using **HTML, CSS, and JavaScript**, adapted into a multi page web app. It displays essential user information, including a profile avatar, name, job role, bio, social links, hobbies, dislikes, an about page displaying bio, goals, areas of low confidence, note to future self and extra thoughts, and a contact page with a form.
 
-This was built to complete the stage zero task for HNGi13.
+This was built to complete the stage one task for HNGi13.
 
 ## Features
 
@@ -16,6 +16,8 @@ This was built to complete the stage zero task for HNGi13.
 - **Social Links** (LinkedIn, GitHub, Twitter)
 - **Hobbies**
 - **Dislikes**
+- **About page**
+- **Contact page**
 
 ## Technologies Used
 
@@ -52,14 +54,6 @@ Ensure you have a modern web browser (Chrome, Firefox, Edge, etc.) installed.
 - Replace `src` with a link to your own image.
 - Edit the name, job role, bio, social links, hobbies and dislikes directly in the HTML file.
 
-## File Structure
-
-```
-📂 Profile Card Project
-│── index.html  # Main profile card HTML file
-│── style.css   # CSS file for styling
-└── script.js   # Javascript file
-
 ```
 
 ## Testing
@@ -84,7 +78,8 @@ This project is open-source and available under the **MIT License**.
 
 For any inquiries or contributions, feel free to reach out:
 
-📧 Email: francesejiro@yahoo.com  
-🔗 LinkedIn: [https://www.linkedin.com/in/ejiro-francess-ejoh](https://www.linkedin.com/in/ejiro-francess-ejoh)  
-🐙 GitHub: [https://www.github.com/Ejiro-Frances](https://www.github.com/Ejiro-Frances)  
+📧 Email: francesejiro@yahoo.com
+🔗 LinkedIn: [https://www.linkedin.com/in/ejiro-francess-ejoh](https://www.linkedin.com/in/ejiro-francess-ejoh)
+🐙 GitHub: [https://www.github.com/Ejiro-Frances](https://www.github.com/Ejiro-Frances)
 🐦 X (formerly twitter): [https://www.x.com/france_ssa](https://www.x.com/france_ssa)
+```
