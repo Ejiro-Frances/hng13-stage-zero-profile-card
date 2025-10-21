@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>About Ejiro Frances | Frontend Web Developer</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <title>About Ejiro Frances | Frontend Web Developer</title>
     <meta
       name="description"
       content="About Ejiro Frances, a frontend developer passionate about crafting interactive and accessible web experiences."
@@ -57,38 +58,41 @@
     ></script>
   </head>
   <body>
-    <!-- navigation -->
-    <nav data-testid="test-navigation">
-      <ul class="nav-links">
-        <li>
-          <a
-            data-testid="test-navigation-home"
-            class="nav-link"
-            href="index.html"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-about"
-            class="nav-link active"
-            href="about.html"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-contact"
-            class="nav-link"
-            href="contact.html"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <!-- navigation -->
+      <nav aria-label="Main Navigation" data-testid="test-navigation">
+        <ul class="nav-links">
+          <li>
+            <a
+              data-testid="test-navigation-home"
+              class="nav-link"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-about"
+              class="nav-link active"
+              aria-current="about page"
+              href="about.html"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-contact"
+              class="nav-link"
+              href="contact.html"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- main about page -->
     <main data-testid="test-about-page" class="">
@@ -144,7 +148,7 @@
         <figure class="profile-avatar__container">
           <img
             src="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
-            onerror="this.onerror=null; this.src='./assets/image.png';"
+            onerror="this.src='assets/image.png';"
             alt="Portrait of Ejiro Frances"
             data-testid="test-user-avatar"
             class="profile-user__avatar"

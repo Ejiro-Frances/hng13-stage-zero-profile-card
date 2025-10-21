@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ejiro Frances | Frontend Web Developer | Profile Card</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <title>Ejiro Frances | Frontend Web Developer | Profile Card</title>
     <meta
       name="description"
       content="A personal profile card for Ejiro Frances, a frontend developer passionate about crafting interactive and accessible web experiences."
@@ -56,38 +57,41 @@
     ></script>
   </head>
   <body>
-    <!-- navigation -->
-    <nav data-testid="test-navigation">
-      <ul class="nav-links">
-        <li>
-          <a
-            data-testid="test-navigation-home"
-            class="nav-link active"
-            href="index.html"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-about"
-            class="nav-link"
-            href="about.html"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-contact"
-            class="nav-link"
-            href="contact.html"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <!-- navigation -->
+      <nav aria-label="Main Navigation" data-testid="test-navigation">
+        <ul class="nav-links">
+          <li>
+            <a
+              data-testid="test-navigation-home"
+              class="nav-link active"
+              aria-current="home page"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-about"
+              class="nav-link"
+              href="about.html"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-contact"
+              class="nav-link"
+              href="contact.html"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- main profile page -->
     <main data-testid="test-profile-page">
@@ -96,7 +100,7 @@
         <figure class="profile-avatar__container">
           <img
             src="https://res.cloudinary.com/dinziqoat/image/upload/v1760625135/kes_yphvba.jpg"
-            onerror="this.onerror=null; this.src='./assets/image.png';"
+            onerror="this.src='assets/image.png';"
             alt="Portrait of Ejiro Frances"
             data-testid="test-user-avatar"
             class="profile-user__avatar"
@@ -111,7 +115,7 @@
         <section class="profile-user__details">
           <!-- show name and time -->
           <header class="profile-user__title-container">
-            <h2 data-testid="test-user-name">Ejiro Frances</h2>
+            <h1 data-testid="test-user-name">Ejiro Frances</h1>
             <p
               class="current-time box-shadow"
               data-testid="test-user-time"
@@ -121,7 +125,7 @@
             </p>
           </header>
 
-          <h4 data-testid="test-user-role">Frontend Developer</h4>
+          <h2 data-testid="test-user-role">Frontend Developer</h2>
 
           <!-- bio -->
           <p
@@ -212,12 +216,12 @@
           <div class="user-hobbies-dislikes-container">
             <!-- Hobbies -->
             <section class="profile-user__others">
-              <h5
+              <h3
                 data-testid="test-user-hobbies-title"
                 class="profile-user__others-title"
               >
                 My Hobbies
-              </h5>
+              </h3>
               <ul
                 data-testid="test-user-hobbies"
                 class="profile-user__others-list"
@@ -231,19 +235,19 @@
 
             <!-- dislikes -->
             <section class="profile-user__others">
-              <h5
+              <h3
                 data-testid="test-user-dislike-title"
                 class="profile-user__others-title"
               >
                 My Dislikes
-              </h5>
+              </h3>
               <ul
                 data-testid="test-user-dislikes"
                 class="profile-user__others-list"
               >
                 <li data-testid="test-user-dislike-loud">Loud places</li>
                 <li data-testid="test-user-dislike-dishonesty">Dishonesty</li>
-                <li data-testid="test-user-dislike-dishonesty">Stress</li>
+                <li data-testid="test-user-dislike-stress">Stress</li>
               </ul>
             </section>
           </div>

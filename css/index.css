@@ -46,6 +46,8 @@
   /* Borders & Dividers */
   --color-border-translucent: oklch(55% 0.02 197 / 0.25);
   --color-divider: oklch(90% 0.02 197 / 0.2);
+
+  --color-focus-ring: oklch(70% 0.17 37.7);
 }
 
 *,

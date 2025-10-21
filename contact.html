@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contact Ejiro Frances | Frontend Web Developer</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <title>Contact Ejiro Frances | Frontend Web Developer</title>
     <meta
       name="description"
       content="Contact Ejiro Frances, a frontend developer passionate about crafting interactive and accessible web experiences."
@@ -59,46 +60,49 @@
   </head>
 
   <body>
-    <!-- navigation -->
-    <nav data-testid="test-navigation">
-      <ul class="nav-links">
-        <li>
-          <a
-            data-testid="test-navigation-home"
-            class="nav-link"
-            href="index.html"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-about"
-            class="nav-link"
-            href="about.html"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            data-testid="test-navigation-contact"
-            class="nav-link active"
-            href="contact.html"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <!-- navigation -->
+      <nav aria-label="Main Navigation" data-testid="test-navigation">
+        <ul class="nav-links">
+          <li>
+            <a
+              data-testid="test-navigation-home"
+              class="nav-link"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-about"
+              class="nav-link"
+              href="about.html"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              data-testid="test-navigation-contact"
+              class="nav-link active"
+              aria-current="contact page"
+              href="contact.html"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- main contact page -->
     <main data-testid="test-contact-page" class="">
       <section class="hero-section contact-hero">
-        <h2 class="contact-heading">
+        <h1 class="contact-heading">
           Let's create magic,
           <span class="contact-me">Contact Me</span>
-        </h2>
+        </h1>
 
         <!-- user social links -->
         <nav>
@@ -161,9 +165,9 @@
         data-testid="test-contact-form-component"
         class="contact-form-section main-section"
       >
-        <h4 data-testid="test-contact-heading">
+        <h2 data-testid="test-contact-heading">
           Fill the form below and I'll get back to you
-        </h4>
+        </h2>
 
         <form
           aria-label="Contact Form"
